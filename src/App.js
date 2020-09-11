@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Button from "./components/Button";
+import Card from "./components/Card";
+import Header from "./components/Header";
+import "./global.css";
 
-function App() {
+export default function App() {
+  const [nameCard, setNameCard] = useState([{ name: "" }]);
+
+  function handleAddName() {
+    setNameCard([
+      ...nameCard,
+      {
+        name: "",
+      },
+    ]);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <main>
+        <div className="container">
+          <Button textButton="Add name" handleFunction={handleAddName} />
+          <div className="cards">
+            {nameCard.map((card, index) => {
+              return <Card key={index} />;
+            })}
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
-
-export default App;

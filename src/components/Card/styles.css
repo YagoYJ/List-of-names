@@ -1,0 +1,19 @@
+.card {
+  width: 100%;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #92cae6;
+  border-radius: 3px;
+}
+
+.card .form {
+  margin-top: 20px;
+}
+
+.card .form input {
+  margin-right: 10px;
+  font-size: 1.1em;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 15px;
+}
